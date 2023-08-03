@@ -1,2 +1,2 @@
 #!/bin/bash
-hjfkf 
+telnet towel.blinkenlights.nl 
