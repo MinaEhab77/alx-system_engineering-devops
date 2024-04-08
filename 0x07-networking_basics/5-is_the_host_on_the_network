@@ -1,14 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# script that pings an IP address passed as an argument
 
-# Check if argument is provided
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 {IP_ADDRESS}"
-    exit 1
+# IP variable
+IP="${1}"
+
+# Script filename
+fn=$(basename "${0}")
+
+if ! [ "$IP" ]; then
+    echo "Usage: ${fn} {IP_ADDRESS}"
+else
+    ping -c 5 "${IP}"
 fi
-
-# Assign the IP address to a variable
-IP_ADDRESS=$1
-
-# Ping the IP address 5 times
-ping -c 5 $IP_ADDRESS
 
